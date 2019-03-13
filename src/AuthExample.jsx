@@ -46,6 +46,12 @@ const fakeAuth = {
   }
 };
 
+/*
+withRouter This ships with react-routerdom. 
+withRouter can be used to add routing properties to any component that is
+rendered somewhere under a Route.
+Using withRouter, we can obtain the router’s history object as a property
+*/
 const AuthButton = withRouter(
   ({ history }) =>
     fakeAuth.isAuthenticated ? (
@@ -102,6 +108,21 @@ class Login extends Component {
   };
 
   render() {
+    console.log("this.props.location", this.props.location);
+    console.log("this.props.location.state", this.props.location.state);
+
+    /**
+     * So test:
+     * 1) go into localhost:<port>/, click on Protected,
+     *    this.props.location.state is defined
+     * or
+     * 2) go directly to   localhost:<port>/login;    and so you don't have history
+     *    this.props.location.state is UNdefined
+     *    That's why a default value is set (coming from pathname "/")
+     * 
+     * What page are you coming from ?
+     *   See this.props.location.state.from
+     */
     let { from } = this.props.location.state || { from: { pathname: "/" } };
     let { redirectToReferrer } = this.state;
 
