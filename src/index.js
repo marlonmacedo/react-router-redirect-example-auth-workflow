@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import App frnpm install --save react-router-domom './App';
 import AuthExample from  "./AuthExample";
 import * as serviceWorker from './serviceWorker';
 
