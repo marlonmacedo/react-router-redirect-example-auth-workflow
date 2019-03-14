@@ -116,7 +116,8 @@ class Login extends Component {
      * 1) go into localhost:<port>/, click on Protected,
      *    this.props.location.state is defined
      * or
-     * 2) go directly to   localhost:<port>/login;    and so you don't have history
+     * 2) reload page and go directly to   localhost:<port>/login;
+     *    and so you don't have history
      *    this.props.location.state is UNdefined
      *    That's why a default value is set (coming from pathname "/")
      * 
